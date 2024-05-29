@@ -8,8 +8,8 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>com.tutorialesvip</groupId>
-    <artifactId>kyndryl-workshop-devops</artifactId>
+    <groupId>com.kyndryl</groupId>
+    <artifactId>workshop-unit-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Unit Test Spring, JUnit y Mockito</name>
     <description>Proyecto Demostración con UnitTest</description>
