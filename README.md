@@ -19,6 +19,7 @@ Está diseñado principalmente para la ejecución de un pipeline CI/CD en Github
 - JaCoCo 0.8.5
 - Docker
 - Github actions
+- Azure Spring Apps
 
 ### Arquitectura
 El proyecteo está construido sobre una arquitectura MVC (Model-View-Controller)
