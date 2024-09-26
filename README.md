@@ -1,4 +1,4 @@
-# Proyecto Demostración con UnitTest: Spring, JUnit y Mockito
+# Proyecto Demostración con UnitTest: Spring, JUnit y Mockito.
 
         <groupId>com.kyndryl</groupId>  
         <artifactId>workshop-unit-test</artifactId>
