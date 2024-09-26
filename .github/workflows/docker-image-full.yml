@@ -67,3 +67,23 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}          
+
+      - name: Set AKS context
+        uses: azure/aks-set-context@v1
+        with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
+            cluster-name: kyndryl-devsecops-workshop
+            resource-group: rg-ConsultCEC-kcl-eastus-001
+    
+      - name: Deploy to AKS
+        uses: azure/k8s-deploy@v3
+        with:
+            manifests: |
+              k8s/deployment.yaml
+            images: |
+              noriegadocker/workshop-unit-test
