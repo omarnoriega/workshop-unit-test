@@ -17,26 +17,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Git Metadata for Docker
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          images: |
-            noriegadocker/workshop-unit-test
-          flavor: |
-            latest=true
-            prefix=
-            suffix=
-          tags: |
-            type=edge,branch=master
-            type=raw,value=buster-slim
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha,prefix=,format=long
+      - name: Build Java application
+        run: mvn clean package
+
+      - name: List target directory
+        run: ls -la target
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -49,6 +34,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Clean Docker cache
+        run: docker builder prune -f
 
       - name: Build and push
         uses: docker/build-push-action@v3
