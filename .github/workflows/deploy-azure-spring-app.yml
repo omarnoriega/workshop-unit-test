@@ -74,4 +74,4 @@ jobs:
 
     - name: Deploy to Azure Spring Apps
       run: |
-        az spring app deploy --name workshop-unit-test-app --service workshop-unit-test --resource-group workshop-di-spring-app --source-path --container-image noriegadocker/workshop-unit-test:latest
+        az spring app deploy --name workshop-unit-test-app --service workshop-unit-test --resource-group workshop-di-spring-app --container-image noriegadocker/workshop-unit-test:latest
