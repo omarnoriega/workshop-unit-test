@@ -37,3 +37,4 @@ jobs:
         service-name: 'workshop-unit-test'
         app-name: 'workshop-unit-test-app'
         package: '${{ github.workspace }}/target/workshop-unit-test-0.0.1-SNAPSHOT.jar'
+        deployment-type: 'development'
