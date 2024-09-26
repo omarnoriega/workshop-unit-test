@@ -8,11 +8,11 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>com.kyndryl</groupId>
+    <groupId>org.kyndryl</groupId>
     <artifactId>workshop-unit-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Unit Test Spring, JUnit y Mockito</name>
-    <description>Proyecto Demostración con UnitTest</description>
+    <name>Workshop Continuous Delivery</name>
+    <description>Proyecto Demostración Workshop Continuous Delivery</description>
 
     <properties>
         <java.version>11</java.version>
