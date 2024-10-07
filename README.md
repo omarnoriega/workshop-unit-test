@@ -1,8 +1,9 @@
-# Proyecto de Demostración Workshop Continuous Delivery
+# Proyecto de Demostración Continuous Delivery
+### Kyndryl Col
 
 ### Descripción
 Este proyecto expone una API Rest que permite consultar datos de algunos paises.
-Está diseñado principalmente para la ejecución de un pipeline CI/CD en Github Action. 
+Está diseñado para la ejecución de pipelines CI/CD en Github Action. 
 
 ### Pasos del Pipeline
 
@@ -34,3 +35,11 @@ El proyecteo está construido sobre una arquitectura MVC (Model-View-Controller)
     date: sep 12 2024
 
 
+## Clean
+    mvn clean
+
+## Build
+    mvn install
+    
+## Local deploy
+    mvn spring-boot:run
