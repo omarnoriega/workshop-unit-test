@@ -43,3 +43,6 @@ El proyecteo está construido sobre una arquitectura MVC (Model-View-Controller)
     
 ## Local deploy
     mvn spring-boot:run
+
+### Status
+Set Up App spring app.
