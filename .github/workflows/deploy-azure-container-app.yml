@@ -72,6 +72,6 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Deploy to Azure Spring Apps
+    - name: Deploy to Azure Container Apps
       run: |
         az spring app deploy --name workshop-unit-test-app --service workshop-unit-test --resource-group workshop-unit-test-app-rg --container-image noriegadocker/workshop-unit-test:latest
