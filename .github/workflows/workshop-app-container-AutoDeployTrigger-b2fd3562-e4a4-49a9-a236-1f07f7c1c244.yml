@@ -14,7 +14,59 @@ on:
   workflow_dispatch:      
 
 jobs:
-  build-and-deploy:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2
+
+    - name: Build Java application
+      run: mvn clean package
+
+    - name: List target directory
+      run: ls -la target
+
+    - name: Git Metadata for Docker
+      id: meta
+      uses: docker/metadata-action@v4
+      with:
+        images: |
+          noriegadocker/workshop-unit-test
+        flavor: |
+          latest=true
+          prefix=
+          suffix=
+        tags: |
+          type=edge,branch=master
+          type=raw,value=buster-slim
+          type=schedule
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=semver,pattern={{major}}
+          type=sha,prefix=,format=long
+
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2 
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/workshop-unit-test:latest
+  deploy:
     runs-on: ubuntu-latest
     permissions: 
       id-token: write #This is required for requesting the OIDC JWT Token
@@ -31,18 +83,10 @@ jobs:
           tenant-id: ${{ secrets.WORKSHOPDEVOPS_AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.WORKSHOPDEVOPS_AZURE_SUBSCRIPTION_ID }}
 
-      - name: Build and push container image to registry
+      - name: Deploy image 
         uses: azure/container-apps-deploy-action@v2
         with:
-          appSourcePath: ${{ github.workspace }}
-          _dockerfilePathKey_: _dockerfilePath_
-          registryUrl: docker.io
-          registryUsername: ${{ secrets.WORKSHOPDEVOPS_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.WORKSHOPDEVOPS_REGISTRY_PASSWORD }}
-          containerAppName: workshop-devops
-          resourceGroup: workshop-devops-rg
-          imageToBuild: noriegadocker/workshop-devops:${{ github.sha }}
-          _buildArgumentsKey_: |
-            _buildArgumentsValues_
-
+          containerAppName: workshop-app-container
+          resourceGroup: workshop-rg
+          imageToDeploy: hub.docker.com/r/noriegadocker/workshop-devops:latest
 
