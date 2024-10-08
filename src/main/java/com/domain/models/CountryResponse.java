@@ -3,11 +3,13 @@ package com.domain.models;
 public class CountryResponse {
     private String productName;
     public String productLine;
-    public String issueDate;
-    //public int yearsOfIndependency;
-    //public int monthsOfIndependency;
-    //public int dayssOfIndependency;
-
+    public String productIssueDate;
+    public String clientName;
+    /* 
+    public int yearsOfIndependency;
+    public int monthsOfIndependency;
+    public int dayssOfIndependency;
+    */
     public String getProductName() {
         return productName;
     }
@@ -18,8 +20,11 @@ public class CountryResponse {
     public void setProductLine(String productLine) {
         this.productLine = productLine;
     }
-    public void setIssueDate(String issueDate) {
-        this.issueDate = issueDate;
+    public void setIssueDate(String productIssueDate) {
+        this.productIssueDate = productIssueDate;
+    }
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
     }
     /* 
     public void setYearsOfIndependency(int yearsOfIndependency) {

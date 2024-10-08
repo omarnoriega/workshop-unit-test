@@ -31,12 +31,12 @@ class IndependencyControllerTest {
     @BeforeEach
     void setUp() {
         Country mockCountry = new Country();
-        mockCountry.setIsoCode("CO");
-        mockCountry.setCountryIdependenceDate("27/02/1844");
+        mockCountry.setIsoCode("AH");
+        mockCountry.setProductIssueDate("23/11/2020");
         mockCountry.setCountryId((long) 1);
-        mockCountry.setCountryName("Colombia");
-        mockCountry.setCountryCapital("Bogotá");
-        Mockito.when(countryRepositoryMock.findCountryByIsoCode("CO")).thenReturn(mockCountry);
+        mockCountry.setProductName("Cuenta de Ahorros");
+        mockCountry.setProductLine("Ahorros");
+        Mockito.when(countryRepositoryMock.findCountryByIsoCode("AH")).thenReturn(mockCountry);
 
     }
 

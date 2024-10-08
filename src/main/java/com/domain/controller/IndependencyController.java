@@ -25,8 +25,8 @@ public class IndependencyController {
         this.countryRepository = countryRepository;
         this.diferenciaEntreFechas = diferenciaEntreFechas;
     }
-
-    @GetMapping(path = "/products")
+    
+    @GetMapping(path = "/product")
     public List<Country> getAllProducts() {
         return (List<Country>) countryRepository.findAll();
 
@@ -36,17 +36,19 @@ public class IndependencyController {
     public ResponseEntity<CountryResponse> getCountryDetails(@PathVariable("productId") String countryId) {
         country = Optional.of(new Country());
         countryResponse = new CountryResponse();
-
         country = Optional.ofNullable(countryRepository.findCountryByIsoCode(countryId.toUpperCase()));
 
         if (country.isPresent()) {
-            Period period = diferenciaEntreFechas.calculateYearsOfIndependency(country.get().getCountryIdependenceDate());
-            countryResponse.setProductName(country.get().getCountryName());
-            countryResponse.setProductLine(country.get().getCountryCapital());
-            countryResponse.setIssueDate(country.get().getCountryIdependenceDate());
-            //countryResponse.setDayssOfIndependency(period.getDays());
-            //countryResponse.setMonthsOfIndependency(period.getMonths());
-            //countryResponse.setYearsOfIndependency(period.getYears());
+            Period period = diferenciaEntreFechas.calculateYearsOfIndependency(country.get().getproductIssueDate());
+            countryResponse.setClientName(country.get().getClientName());
+            countryResponse.setProductName(country.get().getProductName());
+            countryResponse.setProductLine(country.get().getProductLine());
+            countryResponse.setIssueDate(country.get().getproductIssueDate());
+            /*  
+            countryResponse.setDayssOfIndependency(period.getDays());
+            countryResponse.setMonthsOfIndependency(period.getMonths());
+            countryResponse.setYearsOfIndependency(period.getYears());
+            */
         }
         return ResponseEntity.ok(countryResponse);
     }
