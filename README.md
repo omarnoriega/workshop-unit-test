@@ -45,4 +45,4 @@ El proyecteo está construido sobre una arquitectura MVC (Model-View-Controller)
     mvn spring-boot:run
 
 ### Status
-Still setup App spring app, Doesn't works yet
+Azure Container App Setup
