@@ -1,26 +1,27 @@
 package com.domain.models;
 
 public class CountryResponse {
-    private String countryName;
-    public String capitalName;
-    public String independenceDate;
-    public int yearsOfIndependency;
-    public int monthsOfIndependency;
-    public int dayssOfIndependency;
+    private String productName;
+    public String productLine;
+    public String issueDate;
+    //public int yearsOfIndependency;
+    //public int monthsOfIndependency;
+    //public int dayssOfIndependency;
 
-    public String getCountryName() {
-        return countryName;
+    public String getProductName() {
+        return productName;
     }
 
-     public void setCountryName(String countryName) {
-        this.countryName = countryName;
+     public void setProductName(String productName) {
+        this.productName = productName;
     }
-    public void setCapitalName(String capitalName) {
-        this.capitalName = capitalName;
+    public void setProductLine(String productLine) {
+        this.productLine = productLine;
     }
-    public void setIndependenceDate(String independenceDate) {
-        this.independenceDate = independenceDate;
+    public void setIssueDate(String issueDate) {
+        this.issueDate = issueDate;
     }
+    /* 
     public void setYearsOfIndependency(int yearsOfIndependency) {
         this.yearsOfIndependency = yearsOfIndependency;
     }
@@ -30,4 +31,5 @@ public class CountryResponse {
     public void setDayssOfIndependency(int dayssOfIndependency) {
         this.dayssOfIndependency = dayssOfIndependency;
     }
+    */
 }

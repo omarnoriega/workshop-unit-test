@@ -11,7 +11,7 @@ public class Country {
     @Column(name = "iso_code")
     private String isoCode;
     @Column(name = "country_name")
-    private String countryName;
+    private String productName;
     @Column(name = "country_capital")
     private String countryCapital;
     @Column(name = "country_independence_date")
@@ -26,11 +26,11 @@ public class Country {
     }
 
     public String getCountryName() {
-        return countryName;
+        return productName;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setCountryName(String productName) {
+        this.productName = productName;
     }
 
     public String getCountryCapital() {

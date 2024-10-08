@@ -43,15 +43,15 @@ class IndependencyControllerTest {
     @Test
     public void obtenerDetallePaisConCodigoValido() {
         ResponseEntity<CountryResponse> respuestaServicio;
-        respuestaServicio = independencyController.getCountryDetails("CO");
-        Assertions.assertEquals("Colombia",respuestaServicio.getBody().getCountryName());
+        respuestaServicio = independencyController.getCountryDetails("AH");
+        Assertions.assertEquals("Cuenta de Ahorros",respuestaServicio.getBody().getProductName());
     }
 
     @Test
     public void obtenerDetallePaisConCodigoInvalido() {
         ResponseEntity<CountryResponse> respuestaServicio;
         respuestaServicio = independencyController.getCountryDetails("IT");
-        Assertions.assertNull(respuestaServicio.getBody().getCountryName());
+        Assertions.assertNull(respuestaServicio.getBody().getProductName());
     }
 
 
