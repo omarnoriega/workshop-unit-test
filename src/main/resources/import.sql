@@ -1,11 +1,7 @@
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('DO','República Dominicana','Santo Domingo','23/11/1986');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('CA','Canada','Ottawa','01/07/1867');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('EC','Ecuador','Quito','24/05/1822');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('HT','Haití','Puerto Príncipe','01/01/1804');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('VE','Venezuela','Caracas','05/07/1811');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('PY','Paraguay','Asunción','15/05/1811');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('JM','Jamaica','Kingston','06/08/1962');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('GT','Guatemala','Ciudad de Guatemala','15/09/1821');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('CR','Costa Rica','San José','15/07/1821');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('BO','Bolivia','Sucre','06/08/1825');
-insert into country (iso_code,country_name,country_capital,country_independence_date) values ('CO','Colombia','Bogotá','20/07/1810');
+insert into country (iso_code,country_name,country_capital,country_independence_date,client_name) values ('AH','Cuenta de Ahorros','Ahorro','23/11/2020','Beatriz Pinzón');
+insert into country (iso_code,country_name,country_capital,country_independence_date,client_name) values ('SV','Seguro de Vida','Seguro','01/07/1999','Armando Mendoza');
+insert into country (iso_code,country_name,country_capital,country_independence_date,client_name) values ('CH','Crédito Hipotecario','Crédito','24/05/2022','Patricia Fernandez');
+insert into country (iso_code,country_name,country_capital,country_independence_date,client_name) values ('CC','Cuenta Corriente','Ahorro','01/01/1994','Hugo Lombardi');
+insert into country (iso_code,country_name,country_capital,country_independence_date,client_name) values ('TC','Tarjeta de Crédito','Crédito','05/07/2011','Marcela Valencia');
+insert into country (iso_code,country_name,country_capital,country_independence_date,client_name) values ('FC','Fideicomiso','Ahorro','15/05/2011','Nicolás Mora');
+insert into country (iso_code,country_name,country_capital,country_independence_date,client_name) values ('AC','Portafolio Acciones','Inversión','06/08/2001','Fredy Stewart Contreras');

@@ -11,11 +11,14 @@ public class Country {
     @Column(name = "iso_code")
     private String isoCode;
     @Column(name = "country_name")
-    private String countryName;
+    private String productName;
     @Column(name = "country_capital")
-    private String countryCapital;
+    private String productLine;
     @Column(name = "country_independence_date")
-    private String countryIdependenceDate;
+    private String issueDate;
+    @Column(name = "client_name")
+    private String clientName;
+
 
     public void setCountryId(Long countryId) {
         this.countryId = countryId;
@@ -25,27 +28,36 @@ public class Country {
         this.isoCode = isoCode;
     }
 
-    public String getCountryName() {
-        return countryName;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getCountryCapital() {
-        return countryCapital;
+    public String getProductLine() {
+        return productLine;
     }
 
-    public void setCountryCapital(String countryCapital) {
-        this.countryCapital = countryCapital;
+    public void setProductLine(String productLine) {
+        this.productLine = productLine;
     }
 
-    public String getCountryIdependenceDate() {
-        return countryIdependenceDate;
+    public String getproductIssueDate() {
+        return issueDate;
     }
 
-    public void setCountryIdependenceDate(String countryIdependenceDate) {
-        this.countryIdependenceDate = countryIdependenceDate;
+    public void setProductIssueDate(String issueDate) {
+        this.issueDate = issueDate;
     }
+
+    public String getClientName() {
+        return clientName;
+    }
+    
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
+
 }

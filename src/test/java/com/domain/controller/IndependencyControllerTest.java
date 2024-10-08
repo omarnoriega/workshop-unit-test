@@ -31,27 +31,27 @@ class IndependencyControllerTest {
     @BeforeEach
     void setUp() {
         Country mockCountry = new Country();
-        mockCountry.setIsoCode("CO");
-        mockCountry.setCountryIdependenceDate("27/02/1844");
+        mockCountry.setIsoCode("AH");
+        mockCountry.setProductIssueDate("23/11/2020");
         mockCountry.setCountryId((long) 1);
-        mockCountry.setCountryName("Colombia");
-        mockCountry.setCountryCapital("Bogotá");
-        Mockito.when(countryRepositoryMock.findCountryByIsoCode("CO")).thenReturn(mockCountry);
+        mockCountry.setProductName("Cuenta de Ahorros");
+        mockCountry.setProductLine("Ahorros");
+        Mockito.when(countryRepositoryMock.findCountryByIsoCode("AH")).thenReturn(mockCountry);
 
     }
 
     @Test
     public void obtenerDetallePaisConCodigoValido() {
         ResponseEntity<CountryResponse> respuestaServicio;
-        respuestaServicio = independencyController.getCountryDetails("CO");
-        Assertions.assertEquals("Colombia",respuestaServicio.getBody().getCountryName());
+        respuestaServicio = independencyController.getCountryDetails("AH");
+        Assertions.assertEquals("Cuenta de Ahorros",respuestaServicio.getBody().getProductName());
     }
 
     @Test
     public void obtenerDetallePaisConCodigoInvalido() {
         ResponseEntity<CountryResponse> respuestaServicio;
         respuestaServicio = independencyController.getCountryDetails("IT");
-        Assertions.assertNull(respuestaServicio.getBody().getCountryName());
+        Assertions.assertNull(respuestaServicio.getBody().getProductName());
     }
 
 

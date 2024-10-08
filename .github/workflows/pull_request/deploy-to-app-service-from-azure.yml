@@ -4,7 +4,7 @@
 name: Build and deploy WAR app to Azure Web App - workshop-unit-test
 
 on:
-  push:
+  pull_request:
     branches:
       - master
   workflow_dispatch:
